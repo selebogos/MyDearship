@@ -1,0 +1,98 @@
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+      <h1 class="h3 mb-0 text-gray-800">Client's Order</h1>
+    </div>
+      <div class="col-lg-12">
+        <!-- Basic Card Example -->
+        <div class="card shadow mb-12">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Order Details</h6>
+          </div>
+          <div class="card-body">
+
+            <div class="table-responsive">
+
+              <div class="user" >
+                <table class="table-striped" cellspacing="0" width="100%">
+                  <tr>
+                    <td>Order Number #</td>
+                    <td>
+                      <input value="{{User.orderNumber}}"  class="form-control float-sm-left" type="test" placeholder="Order Number..." disabled autofocus disabled />
+
+                    </td>
+
+                  </tr>
+                  <tr>
+                      <td>Date Placed</td>
+                      <td>
+                        <input value="{{User.dateCreated}}"  class="form-control float-sm-left" type="date" placeholder="Date..." disabled autofocus disabled />
+
+                      </td>
+
+                    </tr>
+                    <tr>
+                      <td>Selling Price</td>
+                      <td>
+                        <input value="{{sellingPrice}}"  class="form-control float-sm-left" type="text" placeholder="selling price..." disabled autofocus disabled />
+
+                      </td>
+
+                    </tr>
+                    <tr>
+                      <td>Cost</td>
+                      <td>
+                        <input value="{{cost}}"  class="form-control float-sm-left" type="text" placeholder="cost..." disabled autofocus disabled />
+
+                      </td>
+
+                    </tr>
+                      <tr>
+                        <td>Order Belongs To?</td>
+                       <td>
+                        <a [routerLink]="['/clientdetails',patientId]" >
+                          {{patient}}
+                        </a>
+                        </td>
+
+                      </tr>
+
+                </table>
+
+              </div>
+
+            </div>
+
+            <br/>
+            <div class="table-responsive">
+              <div class="user" >
+                  <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Selling Price</th>
+                            <th scope="col">Cost</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor = "let product of orderItems">
+                            <td>
+                              {{product.product.name}}
+                            </td>
+                            <td>
+                              {{product.product.sellingPrice}}
+                            </td>
+                            <td>
+                              {{product.product.cost}}
+                            </td>
+                          </tr>
+                          </tbody>
+                  </table>
+              </div>
+        </div>
+
+        </div>
+
+      <br/>
+      </div>
+                <br />
